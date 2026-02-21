@@ -1,7 +1,7 @@
 const { httpError } = require('../helpers/handleError')
 const userModel = require('../models/users')
 const PORT = process.env.PORT || 3000
-const URL_PUBLIC = process.env.URL_PUBLIC || '/'
+const URL_PUBLIC = process.env.URL_PUBLIC || `http://localhost:${PORT}`
 const getItems = async(req, res) => {
     try {
         const listAll = [{

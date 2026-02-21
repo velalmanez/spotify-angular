@@ -33,5 +33,6 @@ button {
 }
 
 button:disabled {
+    cursor: pointer;
     opacity: .5;
 }

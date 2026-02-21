@@ -11,10 +11,10 @@ export class CardPlayerComponent {
   @Input() mode: 'small' | 'big' ='small';
   @Input() track: TrackModel ={_id: 0, name: '', album: '', url: '', cover: '' };
   
-  constructor(private _multimediaService : MultimediaService){}
+  constructor(private multimediaService : MultimediaService){}
 
   
   sendPlay(track:TrackModel):void{
-    this._multimediaService.callback.emit(track) //.emit envia el objeto al servicio
+    this.multimediaService.trackInfo$.next(track); 
   }
 }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TrackModel } from '@core/models/tracks.models';
-import * as dataRaw from '../../../data/tracks.json'
+import { MultimediaService } from '../../services/multimedia.service';
 
 @Component({
   selector: 'app-play-list-body',
@@ -13,11 +13,10 @@ export class PlayListBodyComponent implements OnInit {
   //inicializacion del filtro
   optionSort:{property: string|null, order: string} = {property: null, order: 'asc'}
   
-  constructor(){}
+  constructor(public  multimediaService: MultimediaService){}
 
   ngOnInit():void{
-    const {data}: any = (dataRaw as any).default
-    this.tracks = data
+    
   }
 
   //funcion para ordenar el array por la propiedad que se le pasa 
